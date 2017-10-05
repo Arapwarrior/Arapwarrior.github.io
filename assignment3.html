@@ -19,22 +19,29 @@ function myFunction() {
 </body>
 </html>
 
-function yourGuess()
-{
-var guess1 = document.getElementById("guess").value;
-var guess2 = 501;
-var newGuess = Math.floor(guess2);
-var n = 0;
+<script type="text/javascript">
+function yourGuess() {
+    guess = document.getElementById("guess").value;
+    guesses = document.getElementById("output");
 
-if (newGuess < guess1) {
-    yourReturn = "Your are too low!!!"
-}
-else {
-    if (newGuess > guess1) {
-        yourReturn = "You are too high!!!"
+    if (guess == numToGuess) {
+        guesses.value = guesses.value + "\r" + "You have guessed correctly! ("+guess+")";
+    } else if (guess > numToGuess) {
+        guesses.value = guesses.value + "\r" + "You guessing too high!("+guess+")";
+    } else {
+        guesses.value = guesses.value + "\r" + "You guessing too low!("+guess+")";
     }
-    else {
-        yourReturn = "Correct, You are the winner!!!"
-    }       
 }
+
+function showNumberToGuess() {
+    if (document.getElementById('cheat').checked) {
+        document.getElementById('numberToGuess').value = numToGuess;
+        document.getElementById('cheatShow').style.display = 'inline';
+    } else {
+        document.getElementById('numberToGuess').value = '';
+        document.getElementById('cheatShow').style.display = 'none';
+    }
 }
+
+var numToGuess = Math.floor(Math.random()*500);
+</script>
