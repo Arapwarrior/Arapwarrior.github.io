@@ -1,56 +1,41 @@
-public String validateNewPass(String pass1, String pass2){
-        StringBuilder retVal = new StringBuilder();
 
-        if(pass1.length() < 1 || pass2.length() < 1 )retVal.append("Empty fields <br>");
+<!DOCTYPE html>
+<html>
 
-        if (pass1 != null && pass2 != null) {
+<head>
+<script>
+var wordLetters     = ['G', 'O', 'A', 'T'];
+      var guessedLetters  = ['_', '_', '_', '_'];
 
-            if (pass1.equals(pass2)) {
-                logger.info(pass1 + " = " + pass2);
+      function guessLetter(letter) {
+          var goodGuess = false;
+          var moreToGuess = false;
+          for (var i = 0; i < wordLetters.length; i++) {
+              if (wordLetters[i] == letter) {
+                  guessedLetters[i] = letter;
+                  goodGuess = true;
+              }
+              if (guessedLetters[i] == '_') {
+                  moreToGuess = true;
+              }
+          }
+          if (goodGuess) {
+              console.log('Yay, you found a letter!');
+              console.log(guessedLetters.join(''));
+              if (!moreToGuess) {
+                  console.log('YOU WON!');
+              } 
+          } else {
+              console.log('Oh noes, thats not right!');
+          }
+      }
 
-                pass1 = pass2;
-                boolean hasUppercase = !pass1.equals(pass1.toLowerCase());
-                boolean hasLowercase = !pass1.equals(pass1.toUpperCase());
-                boolean hasNumber = pass1.matches(".*\\d.*");
-                boolean noSpecialChar = pass1.matches("[a-zA-Z0-9 ]*");
+      guessLetter('G');
+      guessLetter('I');
+      guessLetter('O');
+      guessLetter('A');
+      guessLetter('T');
+      
+    </script>
 
-                if (pass1.length() < 11) {
-                    logger.info(pass1 + " is length < 11");
-                    retVal.append("Password is too short. Needs to have 11 characters <br>");
-                }
-
-                if (!hasUppercase) {
-                    logger.info(pass1 + " <-- needs uppercase");
-                    retVal.append("Password needs an upper case <br>");
-                }
-
-                if (!hasLowercase) {
-                    logger.info(pass1 + " <-- needs lowercase");
-                    retVal.append("Password needs a lowercase <br>");
-                }
-
-                if (!hasNumber) {
-                    logger.info(pass1 + "<-- needs a number");
-                    retVal.append("Password needs a number <br>");
-                }
-
-                if(noSpecialChar){
-                    logger.info(pass1 + "<-- needs a specail character");
-                    retVal.append("Password needs a special character i.e. !,@,#, etc.  <br>");
-                }
-            }else{
-                logger.info(pass1 + " != " + pass2);
-                retVal.append("Passwords don't match<br>");
-            }
-        }else{
-            logger.info("Passwords = null");
-            retVal.append("Passwords Null <br>");
-        }
-        if(retVal.length() == 0){
-            logger.info("Password validates");
-            retVal.append("Success");
-        }
-
-        return retVal.toString();
-
-    }
+</html>
