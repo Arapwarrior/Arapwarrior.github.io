@@ -1,41 +1,28 @@
-
 <!DOCTYPE html>
 <html>
+<body>
 
-<head>
+<h2>Password</h2>
+
+<p>
+Enter Password in box
+</p>
+
+<p id="demo"></p>
+
 <script>
-var wordLetters     = ['G', 'O', 'A', 'T'];
-      var guessedLetters  = ['_', '_', '_', '_'];
 
-      function guessLetter(letter) {
-          var goodGuess = false;
-          var moreToGuess = false;
-          for (var i = 0; i < wordLetters.length; i++) {
-              if (wordLetters[i] == letter) {
-                  guessedLetters[i] = letter;
-                  goodGuess = true;
-              }
-              if (guessedLetters[i] == '_') {
-                  moreToGuess = true;
-              }
-          }
-          if (goodGuess) {
-              console.log('Yay, you found a letter!');
-              console.log(guessedLetters.join(''));
-              if (!moreToGuess) {
-                  console.log('YOU WON!');
-              } 
-          } else {
-              console.log('Oh noes, thats not right!');
-          }
+    function checkGuess() {
+      var userGuess = letter(guessField.value);
+      if (guessCount === ilovekarl) {
+        guesses.textContent = 'Correct: ';
       }
+          if (userGuess === guessCount) {
+        lastResult.textContent = 'Congratulations! You got it right!';
+        lastResult.style.backgroundColor = 'green';
+        lowOrHi.textContent = '';
+        setGameOver();
+</script>
 
-      guessLetter('G');
-      guessLetter('I');
-      guessLetter('O');
-      guessLetter('A');
-      guessLetter('T');
-      
-    </script>
-
+</body>
 </html>
