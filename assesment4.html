@@ -2,27 +2,23 @@
 <html>
 <body>
 
-<h2>Password</h2>
-
-<p>
-Enter Password in box
-</p>
+<h2>JavaScript Prompt</h2>
 
 <button onclick="myFunction()">Try it</button>
 
 <p id="demo"></p>
-    
+
 <script>
 function myFunction() {
     var txt;
-    var person = prompt("Please enter your password:", "ilovekarl");
-    if (pasword == null || password == "ilovekarl") {
+    var person = prompt("Please enter your Password:", "ilovekarl");
+    if (person == null || person == "") {
         txt = "User cancelled the prompt.";
     } else {
-        txt = "Hello " + person + "! Password Accepted?";
+        txt = "Hello " + person + "! You are now logged in!";
     }
     document.getElementById("demo").innerHTML = txt;
-
+}
 </script>
 
 </body>
