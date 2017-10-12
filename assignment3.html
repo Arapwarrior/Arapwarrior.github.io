@@ -1,27 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
+
+<!-- Assessment 3 -->
+
+
 <html>
-<body>
+    <head>
+      
+	    <title>Assessment 3</title>
+	    
+    </head>
+    
+    <body>
+      
+      <h2>Guess The Password</h2>
+      
+      <button onclick="myFunction()">Click to Log In</button>
+      
+      <script>
 
-<h2>Please Enter Your Password</h2>
-
-<p id="demo"></p>
-
-<script>
-    function myFunction() {
-    var x = document.createElement("INPUT");
-    x.setAttribute("type", "password");
-    x.setAttribute("value", "pswtext");
-    document.body.appendChild(x);
+        function myFunction() {
+    var password = "ilovekarl";
+    var user;
+    while (user!= password) {
+        user = prompt("Password:", "");
+        if (user != password) {
+          alert("Try Again")
+        }
 }
-</script>
-var text = "";
-var i = 0;
-while (person != "ilovekarl") {
-    text "Incorrect Please Try Again";
-    i++;
+ alert("You have successfully signed in.")
+    
 }
-document.getElementById("demo").innerHTML = text;
-</script>
-
-</body>
+        
+      </script>
+      
+    </body>
+    
 </html>
