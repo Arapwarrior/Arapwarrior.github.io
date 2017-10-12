@@ -2,22 +2,16 @@
 <html>
 <body>
 
-<h2>JavaScript Prompt</h2>
+<p>Click the button to create a Password Field.</p>
 
 <button onclick="myFunction()">Try it</button>
 
-<p id="demo"></p>
-
 <script>
 function myFunction() {
-    var txt;
-    var person = prompt("Please enter your Password:", "ilovekarl");
-    if (person == null || person == "") {
-        txt = "User cancelled the prompt.";
-    } else {
-        txt = "Hello " + person + "! You are now logged in!";
-    }
-    document.getElementById("demo").innerHTML = txt;
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "password");
+    x.setAttribute("value", "pswtext");
+    document.body.appendChild(x);
 }
 </script>
 
