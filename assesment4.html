@@ -13,13 +13,16 @@
 function myFunction() {
     var txt;
     var person = "";
+    var guess = 0;
     while (person != "ilovekarl") {
     person = prompt("Please enter your password:", "Harry Potter");
+    guess = guess + 1
     if (person == null || person == "") {
         txt = "User cancelled the prompt.";
     } 
         
     }
+    <p> You have tried + guess + times </p>
     txt = "user accepted";
     document.getElementById("demo").innerHTML = txt;
 }
