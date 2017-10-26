@@ -25,14 +25,13 @@ function myFunction() {
     var txt;
     var person = "";
     while (person != "ilovekarl") {
-    var person = prompt("Please enter your password:", "Harry Potter");
+    person = prompt("Please enter your password:", "Harry Potter");
     if (person == null || person == "") {
         txt = "User cancelled the prompt.";
-    } else {
-        if (person == "ilovekarl") {
-            
-        txt = "user accepted";
+    } 
+        
     }
+    txt = "user accepted";
     document.getElementById("demo").innerHTML = txt;
 }
 
