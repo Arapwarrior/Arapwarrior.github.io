@@ -85,7 +85,20 @@ function myFunction() {
     document.getElementById("demo").innerHTML = txt;
 }
 </script>
-  
+    
+  <script>
+  <p>Click the button to go to Arapahoe Website.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var str = "My Website Zombie Sitter";
+    var result = str.link("http://www.zombiesitter.com/");
+    document.getElementById("demo").innerHTML = result;
+}
   
   
   
